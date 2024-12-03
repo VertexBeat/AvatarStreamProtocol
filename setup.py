@@ -22,7 +22,7 @@ ext_modules = [
 
 setup(
     name="streaming_protocol",
-    version="0.1.0",
+    version="0.2.0",
     author="Dominique Mowius",
     author_email="d.mowius@icloud.com",
     description="A Python-based C++ Streaming Package for Python",
