@@ -28,7 +28,7 @@ setup(
     description="A Python-based C++ Streaming Package for Python",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/vertexbeat/streaming_protocol",
+    url="https://github.com/vertexbeat/AvatarStreamingProtocol",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     ext_modules=ext_modules,

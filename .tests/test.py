@@ -1,9 +1,5 @@
-import streaming_protocol as sp
+import sys
+print(sys.path)  # This will show where Python looks for packages
 
-# Test your functionality here based on what your C++ bindings expose
-# For example (adjust based on your actual API):
-try:
-    # Add test code here that uses your package's functionality
-    print("Successfully imported streaming_protocol")
-except Exception as e:
-    print(f"Error testing package: {e}")
+# Then try importing and see the error
+from streaming_protocol.
