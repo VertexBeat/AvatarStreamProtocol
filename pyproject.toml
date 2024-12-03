@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "pybind11>=2.6.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "streaming_protocol"
+version = "0.1.0"
+description = "A Python-based C++ Streaming Package for Python"
+authors = [
+    {name = "Dominique Mowius", email = "d.mowius@icloud.com"},
+]
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: C++",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+include-package-data = true
+packages = {find = {where = ["src"]}}

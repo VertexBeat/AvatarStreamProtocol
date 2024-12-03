@@ -1,34 +1,44 @@
-import sys
-from setuptools import setup, find_packages, Extension
+from setuptools import setup, Extension, find_packages
+from setuptools.command.build_ext import build_ext
+import os
 import pybind11
 
-is_linux = sys.platform.startswith('linux')
+# Get the absolute path to the include directory
+include_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "include"))
 
-ext_modules = []
-
-if is_linux:
-    ext_modules = [
-        Extension(
-            'streaming_protocol.core.streaming_protocol',
-            sources=['src/PythonBindings.cpp'],
-            include_dirs=[
-                'include',
-                pybind11.get_include(),
-                pybind11.get_include(user=True)
-            ],
-            extra_compile_args=['-std=c++17'],
-        )
-    ]
-
+ext_modules = [
+    Extension(
+        "streaming_protocol.core",
+        sources=["src/PythonBindings.cpp"],
+        include_dirs=[
+            include_dir,
+            pybind11.get_include(),
+            pybind11.get_include(user=True),
+        ],
+        language="c++",
+        extra_compile_args=["-std=c++17"],
+    )
+]
 
 setup(
-    name='streaming_protocol',
-    version='0.1.0',
+    name="streaming_protocol",
+    version="0.1.0",
+    author="Dominique Mowius",
+    author_email="d.mowius@icloud.com",
+    description="A Python-based C++ Streaming Package for Python",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/vertexbeat/streaming_protocol",
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     ext_modules=ext_modules,
-    packages=find_packages(where='src'),
-    package_dir={'': 'src'},  # Tell setuptools to look in src directory
-    package_data={
-        'streaming_protocol': ['py.typed'],
-        'streaming_protocol.core': ['*.pyi']  # Include type stubs
-    },
+    cmdclass={"build_ext": build_ext},
+    python_requires=">=3.6",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Programming Language :: C++",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    include_package_data=True,
 )

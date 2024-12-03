@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+include/DataSerialization.hpp
+include/MetaDataModels.h
+include/json.hpp
+src/PythonBindings.cpp
+src/streaming_protocol/__init__.py
+src/streaming_protocol/py.typed
+src/streaming_protocol.egg-info/PKG-INFO
+src/streaming_protocol.egg-info/SOURCES.txt
+src/streaming_protocol.egg-info/dependency_links.txt
+src/streaming_protocol.egg-info/top_level.txt
+src/streaming_protocol/core/__init__.py
+src/streaming_protocol/core/streaming_protocol.pyi

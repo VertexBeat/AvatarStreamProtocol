@@ -1,0 +1,4 @@
+include include/*.hpp
+include include/*.h
+include src/*.cpp
+include README.md
