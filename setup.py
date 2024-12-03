@@ -8,7 +8,7 @@ include_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "include")
 
 ext_modules = [
     Extension(
-        "streaming_protocol.core",
+        "streaming_protocol",
         sources=["src/PythonBindings.cpp"],
         include_dirs=[
             include_dir,

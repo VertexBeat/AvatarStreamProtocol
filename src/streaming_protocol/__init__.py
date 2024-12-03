@@ -1,5 +1,5 @@
 # src/streaming_protocol/__init__.py
-from .core import *
+from streaming_protocol import DataSerializer, BaseMetadata, TimelineMetadata, AudioMetadata
 
 
 __all__ = [
